@@ -27,10 +27,10 @@ public class ListenerManager {
 
 				Bukkit.getServer().getPluginManager().registerEvents(listener.newInstance(), WrapAPI.get());
 
-				WrapLogger.get().info(listener.getSimpleName() + " listener instantiated.");
+				WrapLogger.get().info("  " + listener.getSimpleName() + " listener instantiated.");
 			} catch (InstantiationException | IllegalAccessException e) {
 
-				WrapLogger.get().severe("An error occured while instancing " + listener.getSimpleName() + " listener.");
+				WrapLogger.get().severe("  An error occured while instancing " + listener.getSimpleName() + " listener.");
 				WrapLogger.get().severe(e.getMessage());
 			}
 		});

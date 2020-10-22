@@ -1,9 +1,6 @@
 package space.debian.WrapAPI.managers;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.event.Listener;
-import space.debian.WrapAPI.WrapAPI;
 import space.debian.WrapAPI.objects.ICommand;
 import space.debian.WrapAPI.tools.logging.WrapLogger;
 
@@ -30,10 +27,10 @@ public class CommandManager {
 				ICommand commandInstance = command.newInstance();
 				Bukkit.getServer().getPluginCommand(commandInstance.getName()).setExecutor(commandInstance);
 
-				WrapLogger.get().info(command.getSimpleName() + " command instantiated.");
+				WrapLogger.get().info("  " + command.getSimpleName() + " command instantiated.");
 			} catch (InstantiationException | IllegalAccessException e) {
 
-				WrapLogger.get().severe("An error occured while instancing the " + command.getSimpleName() + " command.");
+				WrapLogger.get().severe("  An error occured while instancing the " + command.getSimpleName() + " command.");
 				WrapLogger.get().severe(e.getMessage());
 			}
 		});

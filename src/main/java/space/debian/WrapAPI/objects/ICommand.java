@@ -4,7 +4,12 @@ import org.bukkit.command.CommandExecutor;
 
 public abstract class ICommand implements CommandExecutor {
 
-	public String name;
+	private String name;
+
+	public ICommand(String name) {
+
+		this.name = name;
+	}
 
 	public String getName() {
 		return name;
