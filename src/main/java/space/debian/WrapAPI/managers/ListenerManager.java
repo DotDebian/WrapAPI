@@ -30,7 +30,7 @@ public class ListenerManager {
 				WrapLogger.get().info(listener.getSimpleName() + " listener instantiated.");
 			} catch (InstantiationException | IllegalAccessException e) {
 
-				WrapLogger.get().severe("An error occured while enabling  " + listener.getSimpleName() + " listener.");
+				WrapLogger.get().severe("An error occured while instancing " + listener.getSimpleName() + " listener.");
 				WrapLogger.get().severe(e.getMessage());
 			}
 		});
