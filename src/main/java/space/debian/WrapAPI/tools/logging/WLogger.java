@@ -5,9 +5,9 @@ import org.bukkit.plugin.Plugin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class WrapLogger extends Logger {
+public class WLogger extends Logger {
 
-	private static WrapLogger instance;
+	private static WLogger instance;
 	private String pluginName;
 
 	/**
@@ -15,7 +15,7 @@ public class WrapLogger extends Logger {
 	 *
 	 * @param context A reference to the plugin
 	 */
-	public WrapLogger(Plugin context) {
+	public WLogger(Plugin context) {
 		super(context.getClass().getCanonicalName(), null);
 
 		instance = this;
@@ -47,7 +47,7 @@ public class WrapLogger extends Logger {
 		super.log(Level.INFO, "\033[38;5;244m#~ ------------------------------------------------ ~#\033[0m");
 	}
 
-	public static WrapLogger get() {
+	public static WLogger get() {
 		return instance;
 	}
 

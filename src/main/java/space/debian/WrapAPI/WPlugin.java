@@ -3,16 +3,16 @@ package space.debian.WrapAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 import space.debian.WrapAPI.managers.CommandManager;
 import space.debian.WrapAPI.managers.ListenerManager;
-import space.debian.WrapAPI.tools.logging.WrapLogger;
+import space.debian.WrapAPI.tools.logging.WLogger;
 
-public abstract class WrapAPI extends JavaPlugin {
+public abstract class WPlugin extends JavaPlugin {
 
-	private static WrapAPI instance;
+	private static WPlugin instance;
 
 	public void preEnable() {
 		instance = this;
 
-		new WrapLogger(this);
+		new WLogger(this);
 
 		new ListenerManager();
 		new CommandManager();
@@ -30,12 +30,12 @@ public abstract class WrapAPI extends JavaPlugin {
 
 		ListenerManager.get().initListeners();
 
-		WrapLogger.get().spacer();
+		WLogger.get().spacer();
 
 		CommandManager.get().initCommands();
 	}
 
-	public static WrapAPI get() {
+	public static WPlugin get() {
 
 		return instance;
 	}
